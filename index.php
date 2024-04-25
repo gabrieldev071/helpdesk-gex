@@ -17,7 +17,7 @@
             </a>
         </div>
         <nav>
-            <a href="./" target="_blank" rel="noopener noreferrer">Home</a>
+            <a href="./" rel="noopener noreferrer">Home</a>
             <a href="#equipe">Equipe</a>
             <a href="http://" target="_blank" rel="noopener noreferrer">Contato</a>
             <a href="http://" target="_blank" rel="noopener noreferrer">Sobre</a>

@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&family=Nunito:wght@400;600;700&display=swap');
 
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 main {
     background-color: var(--mainColor);
-    font-family: 'Nunito', sans-serif;
 }
 
 
