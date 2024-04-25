@@ -39,9 +39,9 @@ include 'head.php'
         <label for="aps">Localização:</label>
         <select class="form-control" id="aps" name="aps" required>
             <option value="">Selecione sua APS</option>
-            <option value="13021040 - Tirad">Campina G. APS - Tiradentes</option>
-            <option value="13021030 - Dinam">Campina G. APS - Dinamérica</option>
-            <option value="13021020 - Cato">Campina G. APS - Catolé</option>
+            <option value="13021040">Campina G. APS - Tiradentes</option>
+            <option value="13021030">Campina G. APS - Dinamérica</option>
+            <option value="13021020">Campina G. APS - Catolé</option>
         </select>
     </div>
 

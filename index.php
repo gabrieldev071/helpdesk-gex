@@ -41,7 +41,7 @@
 
         switch (@$_REQUEST["page"]) {
             case "novo":
-                include("novo-usuario.php");
+                include("cadastro.php");
                 break;
             case "salvar":
                 include("index.php");
@@ -77,7 +77,7 @@
 
                     <div class="text-center">
                         <span class="txt1">Não possui conta?</span>
-                        <a href="novo-usuario.php" class="txt2">Cadastre-se</a>
+                        <a href="cadastro.php" class="txt2">Cadastre-se</a>
                     </div>
                 </form>
             </div>
