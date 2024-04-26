@@ -6,3 +6,10 @@ function validarFormulario() {
   }
   return true; // Permite o envio do formulário
 }
+
+function pegarDados(id, nome) {
+  
+    document.getElementById('nome_pessoa').innerHTML = nome
+    document.getElementById('nome_pess').value = nome;
+    document.getElementById('cod_pessoa').value = id;
+}

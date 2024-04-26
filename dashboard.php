@@ -32,17 +32,18 @@
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <span>Perfil</span>
+                        <span>Gestão</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="lni lni-agenda"></i>
-                        <span>Tickets</span>
+                        <span>Chamados</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                    <a href="#" class="sidebar-link has-dropdown" data-bs-toggle="collapse" data-bs-target="#auth"
+                        aria-expanded="false" aria-controls="auth">
                         <i class="lni lni-protection"></i>
                         <span>Autenticação</span>
                     </a>
@@ -56,16 +57,19 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link has-dropdown" data-bs-toggle="collapse" data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                    <a href="#" class="sidebar-link has-dropdown" data-bs-toggle="collapse" data-bs-target="#multi"
+                        aria-expanded="false" aria-controls="multi">
                         <i class="lni lni-layout"></i>
                         <span>Multinível</span>
                     </a>
                     <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#multi-two" aria-expanded="true" aria-controls="multi-two">
+                            <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#multi-two"
+                                aria-expanded="true" aria-controls="multi-two">
                                 Editar
                             </a>
-                            <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#multi-two" aria-expanded="true" aria-controls="multi-two">
+                            <a href="#" class="sidebar-link" data-bs-toggle="collapse" data-bs-target="#multi-two"
+                                aria-expanded="true" aria-controls="multi-two">
                                 Dois Links
                             </a>
                         </li>
@@ -95,39 +99,12 @@
             <nav class="navbar navbar-light baseContainer" id="nav-bar-main">
                 <form class="form-navbar form-dash-navbar" action="dashboard.php" method="POST">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" name="busca" autofocus>
-                    <button tton class="btn btn-primary my-2 my-sm-0"type="submit">Pesquisar</button>
+                    <button tton class="btn btn-primary my-2 my-sm-0" type="submit">Pesquisar</button>
                 </form>
                 <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
                     <img class="h-14 w-14 rounded-full" src="./assets/img/Fotoretrato.jpg" alt="Foto de uma pessoa">
                 </a>
             </nav>
-
-            <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
             <section class="container-table baseContainer">
                 <table class="table table-hover">
                     <thead class="">
@@ -162,8 +139,10 @@
                                         <td >
                                         
                                         <a href='atualizar_cadastro.php?id=$cod_pessoa' class='btn btn-success btn-sm'>Editar</a>
-                                        <button class='btn btn-danger btn-sm' >Excluir</button>
-
+                                        <a class='btn btn-danger btn-sm' 
+                                        data-bs-toggle='modal' data-bs-target='#confirma'
+                                        onclick=" .'"' ."pegarDados($cod_pessoa, '$nome')" .'"' ."
+                                        >Excluir</a>
                                         </td>
                                      </tr>";
 
@@ -174,10 +153,37 @@
                         ?>
                     </tbody>
                 </table>
-                <a href="index.php" class="btn btn-primary btn-sm btn-block" rel="noopener noreferrer">Voltar ao início</a>
+                <a href="index.php" class="btn btn-primary btn-sm btn-block" rel="noopener noreferrer">Voltar ao
+                    início</a>
             </section>
         </div>
     </div>
+
+    <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="excluir_cadastro.php" method="post">
+                        <p>Deseja realmente excluir?</p>
+                        <br>
+                            <p><b id='nome_pessoa'>Nome da pessoa</b>?</p>
+                        <input type="hidden" name="nome" id="nome_pess">
+                        <input type="hidden" name="id" id="cod_pessoa">
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Não</button>
+                        <input type="submit" class="btn btn-danger" value="Sim"></input>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/forms.js"></script>
 </body>
 
 </html>

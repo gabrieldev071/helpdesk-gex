@@ -20,3 +20,10 @@ function updateInputClasses() {
   document.getElementById('email').addEventListener('input', updateInputClasses);
   document.getElementById('password').addEventListener('input', updateInputClasses);
   
+
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
