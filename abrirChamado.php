@@ -45,7 +45,7 @@ include 'head.php'
 
     <div class="form-group">
         <label for="anexo">Anexar imagem ou print:</label>
-        <input type="file" class="form-control-file" id="anexo" name="anexo">
+        <input type="file" class="form-control-file" id="anexo" name="foto" accept=".jpg">
     </div>
 
     <button type="submit" class="btn btn-primary btn-block">Abrir Chamado</button>

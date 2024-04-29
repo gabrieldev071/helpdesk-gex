@@ -30,6 +30,11 @@
                 } else {
                     mensagem("$nome  NÃO foi cadastrado!", 'danger');
                 }
+
+                /* CHAMADOO */
+                $foto = $$_FILES['foto'];
+                $nome_foto = $foto['name'];
+
             ?>
             <a href="cadastro.php" class="btn btn-primary">Voltar</a>
         </div>
