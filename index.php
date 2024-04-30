@@ -9,146 +9,182 @@
 </head>
 
 <body>
-    <header class="baseContainer">
-        <div>
-            <a href="./">
-                <i class="fa-solid fa-headset icon headset" style="
-    font-size: 1.8rem; color: white;"></i>
-            </a>
-        </div>
-        <nav>
-            <a href="./" rel="noopener noreferrer">Home</a>
-            <a href="#equipe">Equipe</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">Contato</a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">Sobre</a>
-            <a href="?page=novo" target="_blank" rel="noopener noreferrer">Cadastre-se</a>
-            <!--         <a href="?page=listar" target="_blank" rel="noopener noreferrer">Listar Usuários</a> -->
 
-            <button class="nav-btn nav-close-btn" onclick="showNavbar()">
-                X
-            </button>
-        </nav>
-
-
-        <button class="nav-btn" id="nav-btn" onclick="showNavbar()">
-            ☰
-        </button>
-    </header>
-
-    <main class="baseContainer">
-
-        <?php
-
-        switch (@$_REQUEST["page"]) {
-            case "novo":
-                include("cadastro.php");
-                break;
-            case "salvar":
-                include("index.php");
-                break;
-            default:
-                print "";
-        }
-        ?>
-
-
-        <div class="container-login">
-            <h1 class="">HELP DESK GEX-CG</h1>
-            <div class="wrap-login">
-                <form class="login-form">
-                    <span class="login-form-title">Bem vindo!</span>
-                    <span class="login-form-img">
-                        <img src="" alt="" srcset="">
-                    </span>
-
-                    <div class="wrap-input">
-                        <input class="input" type="text" name="email" id="email" value="" />
-                        <span class="focus-input" data-placeholder="Email"></span>
-                    </div>
-
-                    <div class="wrap-input">
-                        <input class="input" type="password" name="password" id="password" value="" />
-                        <span class="focus-input" data-placeholder="Password"></span>
-                    </div>
-
-                    <div class="container-login-form-btn">
-                        <button class="login-form-btn">Login</button>
-                    </div>
-
-                    <div class="text-center">
-                        <span class="txt1">Não possui conta?</span>
-                        <a href="cadastro.php" class="txt2">Cadastre-se</a>
-                    </div>
-                </form>
+    <div class="wrapper">
+        <aside id="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button">
+                    <i class="lni lni-grid-alt"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <!-- <a href="#">Dashboard</a> -->
+                </div>
             </div>
-        </div>
-    </main>
-
-    <!-- sobre a equipe -->
-
-    <div class="bg-white py-24 sm:py-32" id="equipe">
-        <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-            <div class="max-w-2xl">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Conheça nossa liderança</h2>
-                <p class="mt-6 text-lg leading-8 text-gray-600">Gex Campina grande, colocar texto aqui</p>
-            </div>
-            <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-                <li>
-                    <div class="flex items-center gap-x-6">
-                        <img class="h-16 w-16 rounded-full" src="" alt="">
-                        <div>
-                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Breno</h3>
-                            <p class="text-sm font-semibold leading-6 text-indigo-600">Chefia</p>
-                        </div>
-                    </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <!--  <span>Gestão</span> -->
+                    </a>
                 </li>
-                <li>
-                    <div class="flex items-center gap-x-6">
-                        <img class="h-16 w-16 rounded-full" src="./assets/img/Fotoretrato.jpg" alt="Foto de uma pessoa">
-                        <div>
-                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Gabriel Souza</h3>
-                            <p class="text-sm font-semibold leading-6 text-indigo-600">Estagiário de T.I</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="flex items-center gap-x-6">
-                        <img class="h-16 w-16 rounded-full" src="outra_imagem.jpg" alt="Foto de outra pessoa">
-                        <div>
-                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Edmar Silva</h3>
-                            <p class="text-sm font-semibold leading-6 text-indigo-600">Estagiário de T.I</p>
-                        </div>
-                    </div>
+                <li class="sidebar-item">
+                    <a href="abrirChamado.php" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <!--      <span>
+                            Chamados</span> -->
+                    </a>
                 </li>
             </ul>
-        </div>
-    </div>
-
-<section class="custom-section">
-    <div id="mapid" class="custom-map"></div>
-    <div class="custom-container">
-        <div class="custom-info">
-            <h4 class="custom-title">Estamos aqui</h4>
-            <!-- Conteúdo adicional aqui -->
-        </div>
-    </div>
-</section>
-
-
-    <footer class="footer baseContainer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <p>&copy; 2024 - GEX-CG - Gabriel Souza</p>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <!-- <span>Sair</span> -->
                 </a>
             </div>
-            <div class="footer-right">
-                <a href="#">Termos de Uso</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Contato</a>
+        </aside>
+
+
+        <main class="main baseContainer">
+
+            <?php
+
+            switch (@$_REQUEST["page"]) {
+                case "novo":
+                    include("abrirChamado.php");
+                    break;
+                case "salvar":
+                    include("index.php");
+                    break;
+                case "chamado":
+                    include("abrirChamado.php");
+                    break;
+                default:
+                    print "";
+            }
+            ?>
+
+            <header class="containerHeader">
+                <div>
+                    <a href="./">
+                        <i class="fa-solid fa-headset icon headset" style="
+    font-size: 1.8rem; color: var(--textColor);"></i>
+                    </a>
+                </div>
+                <nav>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Contato</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="?page=novo" target="_blank" rel="noopener noreferrer">Suporte</a>
+
+                    <button class="nav-btn nav-close-btn" onclick="showNavbar()">
+                        X
+                    </button>
+                </nav>
+
+
+                <button class="nav-btn" id="nav-btn" onclick="showNavbar()">
+                    ☰
+                </button>
+            </header>
+
+            <h1 class="login-form-title">GESTÃO DE CHAMADOS GEX-CG</h1>
+            <div class="container-login">
+                <div class="wrap-login">
+                    <form class="login-form">
+                        <span class="login-form-title">SEJA BEM VINDO!</span>
+                        <span class="login-form-img">
+                            <img src="" alt="" srcset="">
+                        </span>
+
+                        <div class="wrap-input">
+                            <input class="input" type="text" name="email" id="email" value="" />
+                            <span class="focus-input" data-placeholder="Email" autofocus></span>
+                        </div>
+
+                        <div class="wrap-input">
+                            <input class="input" type="password" name="password" id="password" value="" />
+                            <span class="focus-input" data-placeholder="Password"></span>
+                        </div>
+
+                        <div class="container-login-form-btn">
+                            <button class="login-form-btn ">Login</button>
+                        </div>
+
+                        <div class="text-center">
+                            <span class="txt1">Não possui conta?</span>
+                            <a href="cadastro.php" class="txt2">Cadastre-se</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- Sobre a equipe -->
+                <div id="carouselExampleCaptions" class="carousel slide wrap-carousel">
+                    <h1 class="login-form-title">EQUIPE T.I</h1>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/img/Fotoretrato.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Gabriel Souza</h5>
+                                <p>Estagiário de T.I</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/img/Breno.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Breno</h5>
+                                <p>T.I</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-        </div>
-    </footer>
+
+
+            <!-- Localização -->
+            <section class="maps-section">
+                <!-- Sobre o projeto-->
+                <div class="custom-container">
+                        <h4 class="custom-title-maps">GESTÃO DE CHAMADOS GEX-CG</h4>
+                        <p>O sistema web help desk foi desenvolvido com o objetivo de facilitar o gerenciamento eficiente e organizado de chamados de suporte técnico dos servidores públicos do INSS.
+                </div>
+                <div id="mapid" class="custom-map"></div>
+            </section>
+
+            <footer class="footer">
+
+<div class="footer-container baseContainer">
+    <div class="footer-left">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <p>&copy; 2024 - GEX-CG - Gabriel Souza</p>
+        </a>
+    </div>
+    <div class="footer-right">
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Contato</a>
+    </div>
+</div>
+</footer>
+        </main>
+    </div>
     <script src="./assets/js/maps.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/inputClass.js"></script>

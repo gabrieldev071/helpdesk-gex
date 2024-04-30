@@ -49,10 +49,10 @@ include 'head.php'
         <label for="matricula">Matrícula:</label>
         <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matrícula" required>
     </div>
-    <div class="form-group">
+<!--     <div class="form-group">
         <label for="descricao">Descrição do problema:</label>
         <textarea class="form-control" id="descricao" name="descricao" rows="5" required></textarea>
-    </div>
+    </div> -->
 
     <div class="form-group">
         <label for="anexo">Anexar imagem ou print:</label>

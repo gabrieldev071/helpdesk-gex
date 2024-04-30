@@ -16,14 +16,11 @@
 
                 $nome = $_POST['nome'];
                 $email = $_POST['email'];
-                $senha = $_POST['senha'];
-                $telefone = $_POST['telefone'];
                 $aps = $_POST['aps'];
-                $matricula = $_POST['matricula'];
                 $foto = $_FILES['foto'];
                 $nome_foto = mover_foto($foto);
 
-                $sql = "INSERT INTO `pessoas` (`nome`, `email`, `senha`, `telefone`, `aps`, `matricula`, `foto`) VALUES ('$nome', '$email', '$senha', '$telefone', '$aps', '$matricula' '$foto')";
+                $sql = "INSERT INTO `chamados` (`nome`, `email`, `localizacao`, `foto`) VALUES ('$nome', '$email', '$aps', '$foto')";
 
                 if (mysqli_query($conn, $sql)) {
 

@@ -36,9 +36,10 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="abrirChamado.php" class="sidebar-link">
                         <i class="lni lni-agenda"></i>
-                        <span>Chamados</span>
+                        <span>    
+                        Chamados</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

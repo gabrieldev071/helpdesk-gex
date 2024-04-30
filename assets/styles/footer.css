@@ -1,14 +1,22 @@
 .footer {
-    background-color: white;
-    color: var(---textColorForms);
+    background-color: var(--backgroundLight);
+    color: var(--textColor);
     font-family: 'Nunito', sans-serif;
+    border-radius: 18px;
+    border-top: 1px solid #fff;
+ 
   }
   
+  .footer::after{
+    border-top: 1px;
+    border-radius: 10px; /* Ajuste conforme necessário para a curvatura da borda */
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
   .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
   }
   
   .footer-left p {

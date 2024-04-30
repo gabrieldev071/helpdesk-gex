@@ -13,7 +13,11 @@
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
-    background-color: #fff;
+    background-color: var(--backgroundLight);
+    background-image: url(/assets/img/login_bg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
     min-width: 0;
 }
 
@@ -27,11 +31,11 @@
 }
 
 #sidebar {
-    width: 270px;
+    width: 64px;
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: var(--mainColor);
+    background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
 }
@@ -84,7 +88,7 @@
 }
 
 .sidebar-nav {
-    padding: 2rem 0;
+    padding: 16px 0;
     flex: 1 1 auto;
 }
 
@@ -105,7 +109,7 @@ a.sidebar-link {
 
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, .075);
-    border-left: 3px solid #3b7ddd;
+    border-left: 3px solid #dee0e0;
 }
 
 .sidebar-item {

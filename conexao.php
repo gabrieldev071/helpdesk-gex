@@ -16,5 +16,17 @@
             </div>";
     }
 
+    function mover_foto($vetor_foto) {
+        if (!$vetor_foto['erro']) {
+
+            $nome_arquivo = date('Y-m-d--h-m-s') .".jpg";
+            move_uploaded_file($vetor_foto['tmp_name'], "img/chamados" .$nome_arquivo);
+            return $nome_arquivo;
+
+        } else {
+            return 0;
+        }
+    }
+
 
 ?>

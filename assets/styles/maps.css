@@ -1,0 +1,36 @@
+
+
+.maps-section {
+    color: var(--textColor);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+
+#mapid {
+    height: 200px;
+    width: 400px;
+    border-radius: 10px;
+  }
+
+.custom-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 70%
+;
+}
+
+  .custom-title-maps {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .custom-container  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }

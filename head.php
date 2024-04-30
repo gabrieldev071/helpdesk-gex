@@ -22,7 +22,8 @@
 
     <link rel="stylesheet" href="./assets/styles/global.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link rel="stylesheet" href="./assets/styles/header.css">
     <link rel="stylesheet" href="./assets/styles/stylecadastro.css">
     <link rel="stylesheet" href="./assets/styles/dashboard.css">
     <link rel="stylesheet" href="./assets/styles/footer.css">
+    <link rel="stylesheet" href="./assets/styles/maps.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
