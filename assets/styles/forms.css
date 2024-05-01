@@ -13,26 +13,13 @@
     font-size: calc(1.325rem + .9vw);
 }
 
-.form-group form {
-    background-color: #f8f9fa;
-    gap: 3rem;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    padding: 30px;
-    margin: 1rem 0;
+
+  /* Adiciona padding ao texto dentro de inputs */
+input[type="text"],
+textarea {
+    padding: 2.0rem 0; /* Adiciona padding de 10 pixels */
 }
 
-.form-group {
-    margin: 1rem 0;
-}
-
-.form-group label {
-    margin: 5px;
-}
-
-.btn-block {
-    margin: 0px 3px 0px 3px;
-}
 
 .btn-primary:hover {
     background-color: #0056b3;

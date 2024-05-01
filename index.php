@@ -3,7 +3,8 @@
 
 <head>
     <?php
-    include 'head.php'
+    include 'head.php';
+    include './assets/php/rotas.php';
     ?>
     <title>HELP DESK GEX-CG</title>
 </head>
@@ -13,25 +14,25 @@
     <div class="wrapper">
         <aside id="sidebar">
             <div class="d-flex">
-                <button class="toggle-btn" type="button">
+                <button class="toggle-btn" id="toggle-btn-event" type="button" onclick="expand()">
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <!-- <a href="#">Dashboard</a> -->
+                    <a href="dashboard.php">Dashboard</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="lni lni-user"></i>
-                        <!--  <span>Gestão</span> -->
+                        <span>Gestão</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="abrirChamado.php" class="sidebar-link">
+                    <a href="chamado.php" class="sidebar-link">
                         <i class="lni lni-agenda"></i>
-                        <!--      <span>
-                            Chamados</span> -->
+                        <span>
+                            Chamados</span>
                     </a>
                 </li>
             </ul>
@@ -45,48 +46,46 @@
 
 
         <main class="main baseContainer">
-
-            <?php
-
-            switch (@$_REQUEST["page"]) {
-                case "novo":
-                    include("abrirChamado.php");
-                    break;
-                case "salvar":
-                    include("index.php");
-                    break;
-                case "chamado":
-                    include("abrirChamado.php");
-                    break;
-                default:
-                    print "";
-            }
-            ?>
-
             <header class="containerHeader">
                 <div>
                     <a href="./">
                         <i class="fa-solid fa-headset icon headset" style="
-    font-size: 1.8rem; color: var(--textColor);"></i>
+    font-size: 3.0rem; color: var(--textColor);"></i>
                     </a>
                 </div>
                 <nav>
                     <a href="http://" target="_blank" rel="noopener noreferrer">Contato</a>
+                    <a href="#sobre">INSS PLAY TV</a>
                     <a href="#sobre">Sobre</a>
-                    <a href="?page=novo" target="_blank" rel="noopener noreferrer">Suporte</a>
+                    <a href="" target="_blank" rel="noopener noreferrer" data-bs-toggle="modal" data-bs-target="#modalFormulario">Suporte</a>
 
                     <button class="nav-btn nav-close-btn" onclick="showNavbar()">
                         X
                     </button>
                 </nav>
-
-
                 <button class="nav-btn" id="nav-btn" onclick="showNavbar()">
                     ☰
                 </button>
             </header>
 
-            <h1 class="login-form-title">GESTÃO DE CHAMADOS GEX-CG</h1>
+            <div id="conteudo">
+                <!-- O conteúdo será atualizado aqui -->
+            </div>
+<!-- Modal -->
+<div class="modal fade" id="modalFormulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!--             <h1 class="login-form-title">GESTÃO DE CHAMADOS GEX-CG</h1>  -->
             <div class="container-login">
                 <div class="wrap-login">
                     <form class="login-form">
@@ -159,36 +158,39 @@
 
 
             <!-- Localização -->
-            <section class="maps-section">
+            <section class="maps-section" id="sobre">
                 <!-- Sobre o projeto-->
                 <div class="custom-container">
-                        <h4 class="custom-title-maps">GESTÃO DE CHAMADOS GEX-CG</h4>
-                        <p>O sistema web help desk foi desenvolvido com o objetivo de facilitar o gerenciamento eficiente e organizado de chamados de suporte técnico dos servidores públicos do INSS.
+                    <h4 class="custom-title-maps">GESTÃO DE CHAMADOS GEX-CG</h4>
+                    <p>O sistema web help desk foi desenvolvido com o objetivo de facilitar o gerenciamento eficiente e organizado de chamados de suporte técnico dos servidores públicos do INSS.
                 </div>
-                <div id="mapid" class="custom-map"></div>
+                <!-- <div id="mapid" class="custom-map"></div> -->
             </section>
 
             <footer class="footer">
 
-<div class="footer-container baseContainer">
-    <div class="footer-left">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-            <p>&copy; 2024 - GEX-CG - Gabriel Souza</p>
-        </a>
-    </div>
-    <div class="footer-right">
-        <a href="#">Termos de Uso</a>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Contato</a>
-    </div>
-</div>
-</footer>
+                <div class="footer-container baseContainer">
+                    <div class="footer-left">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <p>&copy; 2024 - GEX-CG -<a href="https://www.linkedin.com/in/gabriel-albuquerque-souza-desenvolvedor/" target="_blank" rel="noopener noreferrer"> Gabriel Souza</a> </p>
+                        </a>
+                    </div>
+                    <div class="footer-right">
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Contato</a>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
+    <!-- scripts -->
+
     <script src="./assets/js/maps.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/inputClass.js"></script>
     <script src="./assets/js//forms.js"></script>
+
 </body>
 
 </html>

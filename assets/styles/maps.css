@@ -1,36 +1,34 @@
-
-
 .maps-section {
-    color: var(--textColor);
-    height: 400px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+  color: var(--textColor);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+}
 
 
 #mapid {
-    height: 200px;
-    width: 400px;
-    border-radius: 10px;
-  }
+  height: 200px;
+  width: 400px;
+  border-radius: 10px;
+}
 
 .custom-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 1rem;
-  width: 70%
-;
+  gap: 2.0rem;
+  width: 70%;
+  margin: 1.6rem auto;
 }
 
-  .custom-title-maps {
-    text-align: center;
-    font-size: 2rem;
-  }
+.custom-title-maps {
+  text-align: center;
+  font-size: 3.0rem;
+}
 
-  .custom-container  p {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+.custom-container p {
+  font-size: 2.0rem;
+  line-height: 2.4rem;
+}

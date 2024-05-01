@@ -3,10 +3,10 @@
 	align-items: center;
 	justify-content: space-between;
     font-family: 'Nunito', sans-serif;
-	height: 4.0rem;
 	font-weight: 500;
 	color: var(--textColor);
 	padding-bottom: 1rem;
+	font-size: 2.2rem;
 }
 
 header h3 {
@@ -14,20 +14,14 @@ header h3 {
 }
 
 .headset {
-	font-size: 1.7rem;
-	color: red;
 }
 
 nav a {
-	padding: 0.6rem;
-	margin: 0 0.6rem;
-	font-size: 1.2rem;
-	text-decoration: none;
-	border-radius: 8px;
+	margin: 1rem 1rem;
+	border-radius: 0.8rem;
 }
 
 nav a:hover {
-	background-color: var(--backgroundColor);
 	transition: all 0.7s;
 	color: var(--textColor);
 }
@@ -48,6 +42,7 @@ nav {
 	display: flex;
 	align-items: center;
 }
+
 @media only screen and (max-width: 1024px) {
 	header .nav-btn {
 		visibility: visible;
@@ -83,7 +78,6 @@ nav {
 		font-size: 1.5rem;
 	}
 }
-
 
 .menuClosed {
     font-size: 13px;

@@ -7,6 +7,7 @@ function showNavbar() {
     const showMenuButton = window.innerWidth <= 1024;
     const navButton = document.getElementById('nav-btn');
     navButton.style.display = showMenuButton ? 'block' : 'none';
+    console.log("Deu certo!");
   }
   
   window.addEventListener('resize', () => {
@@ -15,8 +16,9 @@ function showNavbar() {
   
   updateMenuButtonVisibility();
   
-const hamBurger = document.querySelector(".toggle-btn");
+const hamBurger = document.getElementById("toggle-btn-event");
 
-hamBurger.addEventListener("click", function () {
+hamBurger.addEventListener("click", function expand() {
   document.querySelector("#sidebar").classList.toggle("expand");
+
 });

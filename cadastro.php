@@ -11,7 +11,7 @@ include 'head.php'
 
 <div class="container baseContainer">
 <h2 class='cadastro-title'>CADASTRO DE NOVO USUÁRIO</h2>
-<form action="cadastro_script.php" method="post" onsubmit="return validarFormulario()" class="needs-validation">
+<form action="cadastroscript.php" method="post" onsubmit="return validarFormulario()" class="needs-validation">
 
     <input type="hidden" name="acao" value="cadastrar">
 
