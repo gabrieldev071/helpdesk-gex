@@ -9,7 +9,7 @@
 
 <div class="container baseContainer">
 <h2 class='cadastro-title'>ABERTURA DE NOVO CHAMADO</h2>
-<form action="abrirChamado_script.php" method="post" onsubmit="return validarFormulario()" class="needs-validation">
+<form action="../assets/php/chamadoscript.php" method="post" onsubmit="return validarFormulario()" class="needs-validation">
 
     <input type="hidden" name="acao" value="cadastrar">
 
@@ -29,17 +29,17 @@
             </div>
 
             <div class="wrap-input">
-                <input type="text" class="input" id="matricula_chamado" name="matricula" required value="">
-                <span class="focus-input" data-placeholder="Matrícula"></span>
+            <input type="text" class="input" id="matricula_chamado" name="matricula" pattern="[0-9]*" inputmode="numeric" required value="">
+                <span class="focus-input" data-placeholder="Matrícula: apenas números"></span>
             </div>
 
             <div class="wrap-input">
                 <select class="input" id="aps_chamado" name="aps" required value="">
                     <option value="">Selecione sua APS</option>
-                    <option value="13021040">Campina G. GEX</option>
-                    <option value="13021030">Campina G. APS - Dinamérica</option>
-                    <option value="13021020">Campina G. APS - Catolé</option>
-                    <option value="13021020">Outros</option>
+                    <option value="GEX">Campina G. GEX</option>
+                    <option value="DINA">Campina G. APS - Dinamérica</option>
+                    <option value="CATOLE">Campina G. APS - Catolé</option>
+                    <option value="OUTROS">Outros</option>
                 </select>
             </div>
 
@@ -49,7 +49,7 @@
                     <option value="Problema de Hardware">Problema de Hardwares</option>
                     <option value="Problema de Software">Problema de Softwares</option>
                     <option value="Problema de Rede">Problema de Rede / Acesso</option>
-                    <option value="SABI">SABI, PRISMA, TOKEN</option>
+                    <option value="SABI/PRIMA/TOKEN">SABI, PRISMA, TOKEN</option>
                     <option value="Outros">Outros</option>
                 </select>
             </div>
@@ -71,7 +71,7 @@
 </form>
 </div>
 
-<script src="./assets/js/inputClass.js"></script>
+<script src="../assets/js/inputClass.js"></script>
 </body>
 </html>
 

@@ -4,7 +4,7 @@
 
 .navbar {
     background-color: var(--backgroundLight);
-    box-shadow: 0 0 1rem 0 rgba(83, 94, 105, 0.61);
+ /*    box-shadow: 0 0 1rem 0 rgba(83, 94, 105, 0.61); */
 }
 
 .form-navbar {
@@ -27,12 +27,7 @@
     gap: 1rem;
 }
 
-#custom-table {
-    color: red;
+
+.alinhar-texto {
+    text-align: center;
 }
-
-
-/* Ajusta o tamanho da fonte para as células da tabela */ /* Isso equivale a 16px com o font-size global de 62.5% */
-tbody, table td, table th, a, button, form, input, placeholder, label, .table, .container-table, .needs-validation, .form-navbar, .form-group, .form-control, .btn, .nav-icon, .modal, .modal-heade, .modal-title, .modal-body, .modal-body {
-    font-size: 1.6rem; 
-} 

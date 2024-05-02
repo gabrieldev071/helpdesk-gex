@@ -7,11 +7,13 @@ function validarFormulario() {
   return true; // Permite o envio do formulário
 }
 
+// pegar dados do PHP para JS
 function pegarDados(id, nome) {
   
     document.getElementById('nome_pessoa').innerHTML = nome
     document.getElementById('nome_pess').value = nome;
     document.getElementById('cod_pessoa').value = id;
+    document.getElementById('cod_pessoa_update').value = id;
 }
 
 // Função para carregar o formulário dentro do modal
@@ -34,14 +36,22 @@ $('#modalFormulario').on('show.bs.modal', function (e) {
 });
 
 
-function openModalUpdate() {
+function openModalUpdate(id) {
   // Faz uma requisição AJAX para o arquivo chamado.php usando o método GET
   $.ajax({
-      url: 'atualizarcadastro.php', // URL do arquivo PHP que contém o formulário
+      url: 'atualizarchamado.php', // URL do arquivo PHP que contém o formulário
       type: 'GET', // Método da requisição
-      success: function(response) { // Função executada quando a requisição é bem-sucedida
+      success: function(response) { 
           // Insere o conteúdo retornado pelo arquivo chamado.php dentro do elemento com classe "modal-body" dentro do modal com ID "modalFormulario"
           $('#modalUpdate .modal-body').html(response);
+          // Preenche os campos da modal com as informações do chamado
+          $('#nome_update').val(response.nome);
+          $('#email_update').val(response.email);
+          $('#telefone_update').val(response.telefone);
+          $('#matricula_update').val(response.matricula);
+          $('#aps_update').val(response.aps);
+          $('#categoria_update').val(response.categoria);
+          $('#descricao_update').val(response.descricao);    
       },
       error: function(xhr, status, error) { // Função executada se ocorrer algum erro na requisição
           console.error('Erro ao carregar formulário:', error); // Exibe um erro no console do navegador
@@ -58,5 +68,3 @@ $(document).ready(function() {
       loadForm();
   });
 });
-
-

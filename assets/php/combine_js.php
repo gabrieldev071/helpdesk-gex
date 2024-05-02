@@ -1,16 +1,14 @@
 <?php
 
 // Diretório onde estão os scripts JavaScript
-$directory = './assets/js';
+$js_folder = '../assets/js/';
 
 // Obtém uma lista de todos os arquivos JavaScript na pasta
-$jsFiles = glob($directory . '*.js');
+$js_files = glob($js_folder . '/*.js');
 
 // Loop através dos arquivos e inclui o conteúdo
-foreach ($jsFiles as $file) {
-    include $file;
+foreach ($js_files as $file) {
+    require_once($file);
 }
-
-include './assets/php/scripts.php'
 
 ?>

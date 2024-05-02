@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<?php
-include 'head.php'
-?>
-
-<link rel="stylesheet" href="./assets/styles/stylecadastro.css">
+<?php include '../head.php'?>
 </head>
 <body>
 

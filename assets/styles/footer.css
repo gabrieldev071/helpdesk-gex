@@ -1,33 +1,25 @@
 .footer {
-    background-color: var(--backgroundLight);
-    color: var(--textColor);
-    border-radius: 1.6rem;
-    font-size: 1.9rem;
-    border-top: 1px solid #fff;
-  }
-  
-  .footer::after{
-    border-top: 1px;
-    border-radius: 10px; /* Ajuste conforme necessário para a curvatura da borda */
-    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.2);
-  }
+  background-color: var(--backgroundLight);
+  color: var(--textColor);
+  font-size: 2rem;
+  border-top: 1px solid rgb(61, 65, 73) 0px 0px 5px;
+  box-shadow: rgb(61, 65, 73) 0px 0px 5px;
+  align-content: flex-end;
+}
 
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer-left p {
-    margin: 0;
-  }
-  
-  .footer-right {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.0rem;
-  
-  }
-  
-  .footer-right a:hover {
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.0rem;
+
+}

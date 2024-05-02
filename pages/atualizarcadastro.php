@@ -3,7 +3,8 @@
 
 <head>
     <?php
-    include 'head.php'
+    include '../head.php';
+    include '../assets/php/rotas.php';
     ?>
     <title>Atualizar cadastro</title>
 </head>
@@ -11,7 +12,7 @@
 <body>
 
 <?php
-    include "conexao.php";
+     include '../conexao.php';
     $id = $_GET['id'] ?? '';
     $sql = "SELECT * FROM pessoas WHERE cod_pessoa = '$id'";
 
@@ -50,7 +51,7 @@
 
             <button type="submit" class="btn btn-success" value="Salvar alterações">Atualizar</button>
             <input type="hidden" class="input" name="id" value="<?php echo $linha['cod_pessoa'];?>">
-            <a href="dashboard.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao Dashboard</a>
+            <a href="./pages/dashboard.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao Dashboard</a>
         </form>
     </div>
 </body>
