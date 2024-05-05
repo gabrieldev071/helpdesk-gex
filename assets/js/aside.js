@@ -18,20 +18,12 @@ window.addEventListener('resize', updateMenuButtonVisibility);
 // Chamar a função updateMenuButtonVisibility para configurar a visibilidade do botão de menu inicialmente
 updateMenuButtonVisibility();
 
-// Adiciona um ouvinte de evento ao carregar o conteúdo DOM para manipular a abertura e fechamento do menu lateral
-document.addEventListener("DOMContentLoaded", function() {
-
+function toggleSidebar() {
   const hamBurger = document.getElementById("toggle-btn-event");
- 
-  if (hamBurger) {
-
-      // Adiciona um ouvinte de evento de clique ao botão do menu de hambúrguer
-      hamBurger.addEventListener("click", function toggleSidebar() {
-          const sidebar = document.querySelector("#sidebar");
-          // Alterna a classe 'expand' na barra lateral para abrir ou fechar o menu lateral
-          if (sidebar) {
-              sidebar.classList.toggle("expand");
-          }
-      });
+  const sidebar = document.querySelector("#sidebar");
+  // Alterna a classe 'expand' na barra lateral para abrir ou fechar o menu lateral
+  if (sidebar) {
+      sidebar.classList.toggle("expand");
   }
-});
+
+}

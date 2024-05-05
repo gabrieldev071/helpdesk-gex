@@ -8,17 +8,14 @@
     <div class="container">
         <div class="row">
             <?php 
-
             include '../../conexao.php';
-
-            $id = $_POST['id'];
+            $id = $_POST['id_chamado'];
             $nome = $_POST['nome'];
             $email = $_POST['email'];
-            $telefone = $_POST['telefone'];
             $matricula = $_POST['matricula'];
             $aps = $_POST['aps'];
             $categoria = $_POST['categoria'];
-
+            
             $sql = "UPDATE `chamados` set `nome` = '$nome', `email` = '$email', `aps` = '$aps', `matricula` = '$matricula', `aps` = '$aps', `categoria` = '$categoria' WHERE id = '$id'";
             
                 if (mysqli_query($conn, $sql)) {

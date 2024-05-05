@@ -22,18 +22,20 @@
              </div>";
     }
 
+
     // Função para mover arquivos de fotos para um diretório específico
     function mover_foto($vetor_foto) {
         // Verifica se não houve erros durante o upload do arquivo
-        if (!$vetor_foto['erro']) {
+        if (!$vetor_foto['error'] and ($vetor_foto['size'] <= 500000)) {
             // Gera um nome de arquivo único baseado na data e hora
-            $nome_arquivo = date('Y-m-d--h-m-s') . ".jpg";
-
+            $nome_arquivo = date('d-m-Y--H-i-s') .".jpg";
             // Move o arquivo para o diretório de destino
-            move_uploaded_file($vetor_foto['tmp_name'], "img/chamados/" . $nome_arquivo);
-
-            // Retorna o nome do arquivo movido
-            return $nome_arquivo;
+            $caminho_destino = __DIR__ . "./assets/img/chamados/" . $nome_arquivo; // Caminho absoluto para o diretório de destino
+            if (move_uploaded_file($vetor_foto['tmp_name'], $caminho_destino)) {
+                return $nome_arquivo;
+            } else {
+                return false;
+            }
         } else {
             // Retorna 0 se houver erro durante o upload
             return 0;

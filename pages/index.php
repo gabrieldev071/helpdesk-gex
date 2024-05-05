@@ -13,7 +13,7 @@
     <div class="wrapper">
         <aside id="sidebar">
             <div class="d-flex">
-                <button class="toggle-btn" id="toggle-btn-event" type="button">
+                <button class="toggle-btn" id="toggle-btn-event" type="button" onclick="toggleSidebar()">
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
@@ -187,7 +187,7 @@
     <script src="../assets/js/forms.js"></script>
     <script src="../assets/js/inputClass.js"></script>
     <script src="../assets/js/maps.js"></script>
-
+    <script src=""></script>
 </body>
 
 </html>

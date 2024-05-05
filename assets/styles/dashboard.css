@@ -31,3 +31,12 @@
 .alinhar-texto {
     text-align: center;
 }
+
+.mostrar-foto {
+    width: 250px;
+}
+
+.lista-foto {
+    width: 70px;
+    border-radius: 10px;
+}

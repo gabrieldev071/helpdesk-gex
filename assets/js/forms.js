@@ -9,62 +9,118 @@ function validarFormulario() {
 
 // pegar dados do PHP para JS
 function pegarDados(id, nome) {
+
+ 
+  document.getElementById("nome_pessoa").innerHTML = nome;   /* nome da pessoa no elemento */
   
-    document.getElementById('nome_pessoa').innerHTML = nome
-    document.getElementById('nome_pess').value = nome;
-    document.getElementById('cod_pessoa').value = id;
-    document.getElementById('cod_pessoa_update').value = id;
+  document.getElementById("nome_pessoa_exclusao").value = nome; /* ID oculto */
+  document.getElementById("cod_pessoa").value = id; /* ID oculto */
+  
 }
 
 // Função para carregar o formulário dentro do modal
 function carregarFormulario() {
   $.ajax({
-      url: 'chamado.php', // Arquivo PHP que contém o formulário
-      type: 'GET',
-      success: function(response) {
-          $('#modalFormulario .modal-body').html(response); // Carrega o conteúdo do formulário dentro do modal
-      },
-      error: function(xhr, status, error) {
-          console.error('Erro ao carregar formulário:', error); // Exibe um erro, se ocorrer
-      }
+    url: "chamado.php", // Arquivo PHP que contém o formulário
+    type: "GET",
+    success: function (response) {
+      $("#modalFormulario .modal-body").html(response); // Carrega o conteúdo do formulário dentro do modal
+    },
+    error: function (xhr, status, error) {
+      console.error("Erro ao carregar formulário:", error); // Exibe um erro, se ocorrer
+    },
   });
 }
 
 // Chama a função para carregar o formulário assim que o modal é exibido
-$('#modalFormulario').on('show.bs.modal', function (e) {
+$("#modalFormulario").on("show.bs.modal", function (e) {
   carregarFormulario();
 });
 
+function openModalUpdate(
+  cod_pessoa,
+  nome,
+  email,
+  matricula,
+  aps,
+  categoria,
+  descricao
+) {
+  var modal = new bootstrap.Modal(document.getElementById("modalAtualizacao"));
+  modal.show();
 
-function openModalUpdate(id) {
-  // Faz uma requisição AJAX para o arquivo chamado.php usando o método GET
-  $.ajax({
-      url: 'atualizarchamado.php', // URL do arquivo PHP que contém o formulário
-      type: 'GET', // Método da requisição
-      success: function(response) { 
-          // Insere o conteúdo retornado pelo arquivo chamado.php dentro do elemento com classe "modal-body" dentro do modal com ID "modalFormulario"
-          $('#modalUpdate .modal-body').html(response);
-          // Preenche os campos da modal com as informações do chamado
-          $('#nome_update').val(response.nome);
-          $('#email_update').val(response.email);
-          $('#telefone_update').val(response.telefone);
-          $('#matricula_update').val(response.matricula);
-          $('#aps_update').val(response.aps);
-          $('#categoria_update').val(response.categoria);
-          $('#descricao_update').val(response.descricao);    
-      },
-      error: function(xhr, status, error) { // Função executada se ocorrer algum erro na requisição
-          console.error('Erro ao carregar formulário:', error); // Exibe um erro no console do navegador
-      }
-  });
+  // Simular uma requisição AJAX
+  var detalhesChamado = {
+    id: cod_pessoa,
+    nome: nome,
+    email: email,
+    matricula: matricula,
+    aps: aps,
+    categoria: categoria,
+    descricao: descricao,
+    // Outros detalhes...
+  };
+
+  // Preencher os campos do formulário com os detalhes do chamado
+  preencherFormulario(detalhesChamado);
 }
 
+// Função para preencher os campos do formulário com os detalhes do chamado
+function preencherFormulario(detalhesChamado) {
+  // Construir o HTML do formulário de atualização
+  var formularioHTML = `
 
-// Função executada quando o documento HTML está pronto
-$(document).ready(function() {
-  // Adiciona um ouvinte de evento de clique no botão com ID "openModalUpdate"
-  $('#openModalUpdate').on('click', function() {
-      // Chama a função loadForm() para carregar o formulário de atualização dentro do modal
-      loadForm();
-  });
-});
+    <div class="container baseContainer">
+        <form action="../assets/php/updatechamado-script.php" method="POST" onsubmit="return validarFormulario()" class="needs-validation">
+
+            <input type="hidden" name="acao" value="cadastrar">
+            <input type="hidden" name="id_chamado" value="${detalhesChamado.id}">
+            <!-- Campos do formulário preenchidos com os detalhes do chamado -->
+
+            <div class="wrap-input">
+            <input type="text" class="input has-val" id="nome_update" name="nome" value="${detalhesChamado.nome}" required>
+            <span class="focus-input" data-placeholder="Nome completo"></span>
+            </div>
+
+            <div class="wrap-input">
+                <input type="email" class="input has-val" id="email_update" name="email" required value="${detalhesChamado.email}">
+                <span class="focus-input" data-placeholder="Email: exemplo@inss.gov.br"></span>
+            </div>
+
+            <div class="wrap-input">
+            <input type="text" class="input has-val" id="matricula_update" name="matricula" required value="${detalhesChamado.matricula}">
+            <span class="focus-input" data-placeholder="Matrícula"></span>
+            </div>
+
+            <div class="wrap-input">
+                <select class="input has-val" id="aps_update" name="aps" required value="">
+                    <option value="">Selecione a APS</option>
+                    <option value="GEX">Campina G. GEX</option>
+                    <option value="DINA">Campina G. APS - Dinamérica</option>
+                    <option value="CATOLE">Campina G. APS - Catolé</option>
+                    <option value="OUTROS">Outros</option>
+                </select>
+            </div>
+
+            <div class="wrap-input">
+                <select class="input has-val" id="categoria_update" name="categoria" required value="">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Problema de Hardware">Problema de Hardwares</option>
+                    <option value="Problema de Software">Problema de Softwares</option>
+                    <option value="Problema de Rede">Problema de Rede / Acesso</option>
+                    <option value="SABI/PRIMA/TOKEN">SABI, PRISMA, TOKEN</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
+        </form>
+        </div>
+    `;
+
+  // Exibir o formulário dentro da div desejada
+  /*  document.getElementById('formularioAtualizacao').innerHTML = formularioHTML; */
+
+  document.getElementById("formularioAtualizacao").innerHTML = formularioHTML;
+}
+

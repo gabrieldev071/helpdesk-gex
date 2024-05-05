@@ -12,7 +12,6 @@
     include '../conexao.php';
     $sql = "SELECT * FROM chamados WHERE nome LIKE '%$pesquisa%'";
     $dados = mysqli_query($conn, $sql);
-
     ?>
 
     <div class="wrapper ">
@@ -22,7 +21,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="#">Dashboard</a>
+                    <a href="dashboard.php">Dashboard</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
@@ -108,7 +107,8 @@
                                 <th scope="col" class="text-uppercaser alinhar-texto">APS</th>
                                 <th scope="col" class="text-uppercase">Categoria</th>
                                 <th scope="col" class="w-25 p-3 text-uppercase">Descrição</th>
-                                <th scope="col" class="text-uppercase">Funções</th>
+                                <th scope="col" class="">Foto</th>
+                                <th scope="col" class="text-uppercase">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -123,8 +123,9 @@
                                 $aps = $linha['aps'];
                                 $categoria = $linha['categoria'];
                                 $descricao = $linha['descricao'];
+                                $foto = $linha['foto'];
 
-                                echo "<tr class='align-middle'>
+                             echo "<tr class='align-middle'>
                             <th scope='row'>$cod_pessoa</th>
                             <th scope='row'>$nome</th>
                             <td>$email</td>
@@ -132,8 +133,10 @@
                             <td>$aps</td>
                             <td>$categoria</td>
                             <td class='text-wrap'>$descricao</td>
+                            <td <img src='../assets/img/chamados/$foto' class='lista-foto'></td>
                             <td width=150px>
-                                <a href='atualizarchamado.php?id=$cod_pessoa' data-bs-toggle='modal' data-bs-target='#modalUpdate' class='btn btn-success' onclick=" . '"' . "openModalUpdate('$cod_pessoa', '$nome', '$email', '$matricula', '$aps', '$categoria', '$descricao')" . '; "' . ">Editar</a>
+                                <a 
+                                class='btn btn-success btnEditar'data-id='<?php echo $linha[id]; ?>' onclick=" . '"' . "openModalUpdate('$cod_pessoa', '$nome', '$email', '$matricula', '$aps', '$categoria', '$descricao')" . '; "' . ">Editar</a>
                                 <a class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#confirma' onclick=" . '"' . "pegarDados($cod_pessoa, '$nome')" . '"' . ">Excluir</a>
                             </td>
                          </tr>";
@@ -146,70 +149,69 @@
                 <a href="index.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao
                     início</a>
             </section>
-
-            <!-- Modal Update-->
-
-            <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
+<script src="../assets/img/chamados/"></script>
+            <!-- MODAL UPDATE -->
+            <div class="modal fade" id="modalAtualizacao" tabindex="-1" aria-labelledby="modalAtualizacaoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <h5 class="modal-title" id="modalAtualizacaoLabel">Confirmar atualização?</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" id="formularioAtualizacao">
+                            <!-- Conteúdo do formulário aqui -->
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- MODAL DELETE -->
-            <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão?</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="excluirCadastro.php" method="post">
-                                <p>Deseja realmente excluir</p>
-                                <br>
-                                <p><b id='nome_pessoa'>Nome da pessoa</b>?</p>
-                                <br>
-                                <p>Após exclusão será necessário realizar um novo cadastro!</p>
-                                <input type="hidden" name="nome" id="nome_pess">
-                                <input type="hidden" name="id" id="cod_pessoa">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                            <input type="submit" class="btn btn-danger" value="Sim"></input>
-                            </form>
-                        </div>
-                    </div>
+    </div>
+    <!-- MODAL DELETE -->
+    <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../assets/php/excluirCadastro.php" method="post">
+                        <p>Deseja realmente excluir</p>
+                        <br>
+                        <p><b id='nome_pessoa'>Nome da pessoa</b>?</p>
+                        <br>
+                        <p>Após exclusão será necessário realizar um novo cadastro!</p>
+                        <input type="hidden" name="nome" id="nome_pessoa_exclusao">
+                        <input type="hidden" name="id" id="cod_pessoa">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <input type="submit" class="btn btn-danger" value="Sim"></input>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Footer -->
-            <footer class="footer ">
-                <div class="footer-container baseContainer border-link">
-                    <div class="footer-left">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <p>&copy; 2024 - GEX-CG -<a href="https://www.linkedin.com/in/gabriel-albuquerque-souza-desenvolvedor/" target="_blank" rel="noopener noreferrer"> Gabriel Souza</a> </p>
-                        </a>
-                    </div>
-                    <div class="footer-right">
-                        <a href="#">Termos de Uso</a>
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Contato</a>
-                    </div>
-                </div>
-            </footer>
-        </main>
+    <!-- Footer -->
+    <footer class="footer ">
+        <div class="footer-container baseContainer border-link">
+            <div class="footer-left">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <p>&copy; 2024 - GEX-CG -<a href="https://www.linkedin.com/in/gabriel-albuquerque-souza-desenvolvedor/" target="_blank" rel="noopener noreferrer"> Gabriel Souza</a> </p>
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+        </div>
+    </footer>
+    </main>
     </div>
     <!-- scripts -->
-
     <script src="../assets/js/aside.js"></script>
-    <script src="../assets/js//forms.js"></script>
+    <script src="../assets/js/forms.js"></script>
     <script src="../assets/js/inputClass.js"></script>
     <script src="../assets/js/maps.js"></script>
 </body>

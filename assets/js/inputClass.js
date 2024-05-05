@@ -1,15 +1,4 @@
 // Função para atualizar as classes dos inputs com base no valor
-function updateInputClasses(input) {
-
-  if (input.value !== "") {
-
-    input.classList.add("has-val");
-  } else {
- 
-    input.classList.remove("has-val");
-  }
-}
-
 // Array de IDs dos inputs a serem monitorados
 const inputIds = [
   "email",
@@ -29,6 +18,16 @@ const inputIds = [
   "categoria_update",
   "status_update"
 ];
+
+function updateInputClasses(input) {
+
+  if (input.value !== "") {
+    input.classList.add("has-val");
+  } else {
+ 
+    input.classList.remove("has-val");
+  }
+}
 
 // Adiciona ouvinte de evento para cada input
 document.addEventListener("input", function(event) {

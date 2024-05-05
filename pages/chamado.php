@@ -9,7 +9,7 @@
 
 <div class="container baseContainer">
 <h2 class='cadastro-title'>ABERTURA DE NOVO CHAMADO</h2>
-<form action="../assets/php/chamadoscript.php" method="post" onsubmit="return validarFormulario()" class="needs-validation">
+<form action="../assets/php/chamadoscript.php" method="post" enctype="multipart/form-data"  onsubmit="return validarFormulario()" class="needs-validation">
 
     <input type="hidden" name="acao" value="cadastrar">
 
@@ -62,7 +62,7 @@
             <div class="wrap-input">
                 <label for="anexo">Anexar imagem ou print:</label>
                 <br></br>
-                <input type="file" class="form-control-file input" id="anexo" name="foto" accept=".jpg">
+                <input type="file" class="form-control-file input" id="anexo" name="fotoPrint" accept=".jpg">
             </div>
 
             <button type="submit" class="btn btn-success">Abrir Chamado</button>

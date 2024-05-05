@@ -23,7 +23,8 @@
 
                 if (mysqli_query($conn, $sql)) {
 
-                    echo "<img src='img/chamados/$nome_foto' title='$nome_foto'>";
+                    echo "<img src='img/chamados/$nome_foto' title='$nome_foto' class='mostrar-foto'>";
+
 
                     mensagem("$nome foi cadastrado com sucesso!", 'success');
 

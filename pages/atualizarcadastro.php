@@ -22,7 +22,7 @@
 
     <div class="container baseContainer">
         <h2 class='cadastro-title'>ATUALIZAR DADOS</h2>
-        <form action="atualizar_cadastroscript.php" method="POST" onsubmit="return validarFormulario()" class="needs-validation">
+        <form action="../assets/php/updatechamado-script.php" method="POST" onsubmit="return validarFormulario()" class="needs-validation">
 
             <div class="wrap-input">
                 <label for="nome">Nome completo:</label>
