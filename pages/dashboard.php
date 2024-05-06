@@ -53,10 +53,11 @@
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="https://github.com/gabrieldev071/helpdesk-gex"  target="_blank" rel="noopener noreferrer" class="sidebar-link">
                         <i class="lni lni-github-original"></i>
                         <span>Github</span>
                     </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
@@ -91,7 +92,6 @@
                     </div>
                 </a>
             </nav>
-
             <!-- GRÁFICOS -->
             <section class="container-table flex-grow-1 baseContainer">
                 <h3 class="text-start text-light fw-bold fs-1 my-5">CHAMADOS
@@ -107,13 +107,12 @@
                                 <th scope="col" class="text-uppercaser alinhar-texto">APS</th>
                                 <th scope="col" class="text-uppercase">Categoria</th>
                                 <th scope="col" class="w-25 p-3 text-uppercase">Descrição</th>
-                                <th scope="col" class="">Foto</th>
-                                <th scope="col" class="text-uppercase">Edit</th>
+                                <th scope="col" class="text-uppercase">Foto</th>
+                                <th scope="col" class="text-uppercase">Funções</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-
                             while ($linha = mysqli_fetch_assoc($dados)) {
                                 $cod_pessoa = $linha['id'];
                                 $nome = $linha['nome'];
@@ -125,38 +124,48 @@
                                 $descricao = $linha['descricao'];
                                 $foto = $linha['foto'];
 
+                                if (!$foto == null) {
+                                    $mostra_foto = "<img src='../assets/img/chamados/$foto' alt='' srcset='' class='lista-foto'>";
+                                } else {
+                                    $mostra_foto = '';
+                                }
+                                
+
                              echo "<tr class='align-middle'>
-                            <th scope='row'>$cod_pessoa</th>
-                            <th scope='row'>$nome</th>
-                            <td>$email</td>
-                            <td>$matricula</td>
-                            <td>$aps</td>
-                            <td>$categoria</td>
-                            <td class='text-wrap'>$descricao</td>
-                            <td <img src='../assets/img/chamados/$foto' class='lista-foto'></td>
-                            <td width=150px>
-                                <a 
-                                class='btn btn-success btnEditar'data-id='<?php echo $linha[id]; ?>' onclick=" . '"' . "openModalUpdate('$cod_pessoa', '$nome', '$email', '$matricula', '$aps', '$categoria', '$descricao')" . '; "' . ">Editar</a>
-                                <a class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#confirma' onclick=" . '"' . "pegarDados($cod_pessoa, '$nome')" . '"' . ">Excluir</a>
-                            </td>
-                         </tr>";
+                                <th scope='row'>$cod_pessoa</th>
+                                <th scope='row'>$nome</th>
+                                <td>$email</td>
+                                <td>$matricula</td>
+                                <td>$aps</td>
+                                <td>$categoria</td>
+                                <td class='text-wrap'>$descricao</td>
+                                <td>$mostra_foto</td>
+                                <td width=80px>
+                                    <a 
+                                    class='btn btn-success btnEditar'data-id='<?php echo $linha[id]; ?>' onclick=" . '"' . "openModalUpdate('$cod_pessoa', '$nome', '$email', '$matricula', '$aps', '$categoria', '$descricao')" . '; "' . ">
+                                    <i class='fa-regular fa-pen-to-square'></i>
+                                    </a>
+                                    <a class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#confirma' onclick=" . '"' . "pegarDados($cod_pessoa, '$nome')" . '"' . ">
+                                    <i class='lni lni-trash-can'></i>
+                                    </a>
+                                </td>
+                            </tr>";
                             }
                             ?>
                         </tbody>
                     </table>
                 </div>
-
-                <a href="index.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao
+<img src="../assets//img/chamados/" alt="" srcset="">
+                <a href="index.php" class="btn btn-secondary"  target="_blank" rel="noopener noreferrer" >Voltar ao
                     início</a>
             </section>
-<script src="../assets/img/chamados/"></script>
             <!-- MODAL UPDATE -->
             <div class="modal fade" id="modalAtualizacao" tabindex="-1" aria-labelledby="modalAtualizacaoLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalAtualizacaoLabel">Confirmar atualização?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
                         </div>
                         <div class="modal-body" id="formularioAtualizacao">
                             <!-- Conteúdo do formulário aqui -->
@@ -171,7 +180,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmar exclusão?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="../assets/php/excluirCadastro.php" method="post">

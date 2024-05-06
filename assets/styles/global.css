@@ -9,10 +9,6 @@ html {
   font-size: 62.5%;
 }
 
-main {
-    background-color: var(--mainColor);
-}
-
 
 :root {
 	--mainColor: #134985;
@@ -31,8 +27,8 @@ main {
 .baseContainer {
   padding-left: 4%;
   padding-right: 4%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 

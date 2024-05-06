@@ -6,7 +6,7 @@
     include '../head.php';
     include '../assets/php/rotas.php';
     ?>
-    <title>HELP DESK GEX-CG</title>
+    <title>Help Desk GEX-CG</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="dashboard.php">Dashboard</a>
+                    <a href="dashboard.php" target="_blank" rel="noopener noreferrer">Dashboard</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
@@ -28,13 +28,14 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="https://github.com/gabrieldev071/helpdesk-gex"  target="_blank" rel="noopener noreferrer" class="sidebar-link">
                         <i class="lni lni-github-original"></i>
                         <span>Github</span>
                     </a>
+                    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="chamado.php" class="sidebar-link">
+                    <a href="chamado.php" class="sidebar-link"  target="_blank" rel="noopener noreferrer">
                         <i class="lni lni-agenda"></i>
                         <span>
                             Chamados</span>
@@ -80,14 +81,15 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar">
+                            </button>
                         </div>
                         <div class="modal-body">
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<h1 class="login-form-title">GESTÃO DE CHAMADOS GEX-CG</h1> -->
+            <!-- LOGIN -->
             <div class="container-login border-link baseContainer">
                 <div class="wrap-login">
                     <form class="login-form">
@@ -158,7 +160,7 @@
                 </div>
             </div>
             <!-- Localização -->
-            <section class="maps-section" id="sobre">
+            <section class="maps-section baseContainer" id="sobre">
                 <!-- Sobre o projeto-->
                 <div class="custom-container">
                     <h4 class="custom-title-maps">GESTÃO DE CHAMADOS GEX-CG</h4>

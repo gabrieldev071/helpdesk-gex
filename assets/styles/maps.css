@@ -3,9 +3,7 @@
   height: 200px;
   display: flex;
   justify-content: center;
-  gap: 1.6rem;
 }
-
 
 #mapid {
   height: 200px;
@@ -20,7 +18,6 @@
   flex-wrap: wrap;
   gap: 2.0rem;
   width: 70%;
-  margin: 1.6rem auto;
 }
 
 .custom-title-maps {

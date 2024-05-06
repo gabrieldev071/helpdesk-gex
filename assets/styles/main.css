@@ -15,7 +15,7 @@
 
 .container-login {
   width: auto;
-  height: 95vh;
+  /* height: 95vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,10 +278,6 @@
   background-color: var(--mainColor);
 }
 
-/* .d-md-block {
-
-} */
-
 .modal-content {
   background-color: rgb(47, 49, 54);
   color: white; /* Define a cor do texto dentro do modal */
@@ -295,4 +291,8 @@
 .wrap-input option {
   background-color: rgb(47, 49, 54);
   border: none;
+}
+
+.custom-close-btn {
+  color: white !important;
 }

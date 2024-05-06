@@ -49,7 +49,7 @@
                     <option value="Problema de Hardware">Problema de Hardwares</option>
                     <option value="Problema de Software">Problema de Softwares</option>
                     <option value="Problema de Rede">Problema de Rede / Acesso</option>
-                    <option value="SABI/PRIMA/TOKEN">SABI, PRISMA, TOKEN</option>
+                    <option value="SABI/PRISMA/TOKEN">SABI, PRISMA, TOKEN</option>
                     <option value="Outros">Outros</option>
                 </select>
             </div>
@@ -62,11 +62,11 @@
             <div class="wrap-input">
                 <label for="anexo">Anexar imagem ou print:</label>
                 <br></br>
-                <input type="file" class="form-control-file input" id="anexo" name="fotoPrint" accept=".jpg">
+                <input type="file" class="form-control-file input" id="anexo" name="fotoPrint" accept="image/*" required>
             </div>
 
             <button type="submit" class="btn btn-success">Abrir Chamado</button>
-            <a href="index.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao início</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         </form>
 </form>
 </div>
