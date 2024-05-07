@@ -2,7 +2,10 @@
 <html lang="pt-br">
 
 <head>
-    <?php include '../head.php' ?>
+    <?php include '../head.php';
+    include '../assets/php/validar.php';
+    ?>
+    
     <title>Dashboard</title>
 </head>
 
@@ -73,7 +76,7 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="index.php" class="sidebar-link">
+                <a href="../../index.php" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>Sair</span>
                 </a>
@@ -156,7 +159,7 @@
                     </table>
                 </div>
 <img src="../assets//img/chamados/" alt="" srcset="">
-                <a href="index.php" class="btn btn-secondary"  target="_blank" rel="noopener noreferrer" >Voltar ao
+                <a href="../index.php" class="btn btn-secondary"  target="_blank" rel="noopener noreferrer" >Voltar ao
                     início</a>
             </section>
             <!-- MODAL UPDATE -->

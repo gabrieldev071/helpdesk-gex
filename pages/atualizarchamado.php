@@ -88,7 +88,7 @@ $linha = mysqli_fetch_assoc($dados);
             </div>
             <button type="submit" class="btn btn-success">Salvar alterações</button>
             <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
-            <a href="index.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao início</a>
+            <a href="../../index.php" class="btn btn-secondary" rel="noopener noreferrer">Voltar ao início</a>
         </form>
     </div>
 </body>

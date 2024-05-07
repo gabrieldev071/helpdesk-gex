@@ -8,11 +8,10 @@
     // Tentativa de conexão com o banco de dados
     if ($conn = mysqli_connect($server, $user, $pass, $bd)) {
         // Se a conexão for bem-sucedida, exibe uma mensagem
-        
-        //echo "Conectado! <br>";
+       // echo "Conectado! <br>";
     } else {
         // Se a conexão falhar, exibe uma mensagem de erro
-       // echo "Erro!";
+       //echo "Erro!";
     }
 
     // Função para exibir mensagens formatadas

@@ -1,8 +1,8 @@
 // Função para atualizar as classes dos inputs com base no valor
 // Array de IDs dos inputs a serem monitorados
 const inputIds = [
-  "email",
-  "password",
+  "email_login",
+  "password_login",
   "nome_chamado",
   "email_chamado",
   "telefone_chamado",

@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <?php
-    include '../head.php';
-    include '../assets/php/rotas.php';
+    <?php include './assets/php/rotas.php';
+    include './assets/php/login.php';
     ?>
+        <!-- Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Tailiwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/78f50e1103.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+
+     <!-- AJAX -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/aside.css">
+    <link rel="stylesheet" href="./assets/styles/forms.css">
+    <link rel="stylesheet" href="./assets/styles/dashboard.css">
+    <link rel="stylesheet" href="./assets/styles/footer.css">
+    <link rel="stylesheet" href="./assets/styles/maps.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
     <title>Help Desk GEX-CG</title>
 </head>
-
 <body>
     <div class="wrapper">
         <aside id="sidebar">
@@ -17,7 +41,7 @@
                     <i class="lni lni-grid-alt"></i>
                 </button>
                 <div class="sidebar-logo">
-                    <a href="dashboard.php" target="_blank" rel="noopener noreferrer">Dashboard</a>
+                    <a href="./pages/dashboard.php" target="_blank" rel="noopener noreferrer">Dashboard</a>
                 </div>
             </div>
             <ul class="sidebar-nav">
@@ -92,31 +116,32 @@
             <!-- LOGIN -->
             <div class="container-login border-link baseContainer">
                 <div class="wrap-login">
-                    <form class="login-form">
+                    <form class="login-form" method="POST" action="index.php">
                         <span class="login-form-title">SEJA BEM-VINDO!</span>
                         <span class="login-form-img">
                             <img src="" alt="" srcset="">
                         </span>
 
                         <div class="wrap-input">
-                            <input class="input" type="text" name="email" id="email" value="" />
+                            <input class="input" type="text" name="email_login" id="email_login" value="" />
                             <span class="focus-input" data-placeholder="Email" autofocus></span>
                         </div>
 
                         <div class="wrap-input">
-                            <input class="input" type="password" name="password" id="password" value="" />
+                            <input class="input" type="password" name="password_login" id="password_login" value="" />
                             <span class="focus-input" data-placeholder="Password"></span>
                         </div>
 
                         <div class="container-login-form-btn">
-                            <button class="login-form-btn ">Login</button>
+                            <button type="submit" class="login-form-btn">Login</button>
                         </div>
 
                         <div class="text-center">
                             <span class="txt1">Não possui conta?</span>
-                            <a href="cadastro.php" class="txt2">Cadastre-se</a>
+                            <a href="./pages/cadastro.php" class="txt2">Cadastre-se</a>
                         </div>
                     </form>
+                    <p>Respostas do site</p>
                 </div>
                 <!-- Sobre a equipe -->
                 <div id="carouselExampleCaptions" class="carousel slide wrap-carousel">
@@ -128,14 +153,14 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../assets/img/Gabriel.jpg" class="d-block w-100" alt="...">
+                            <img src="./assets/img/Gabriel.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Gabriel Souza</h5>
                                 <p>Estagiário de T.I</p>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/img/Breno.jpg" class="d-block w-100" alt="...">
+                            <img src="./assets/img/Breno.jpg" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Breno</h5>
                                 <p>T.I</p>
@@ -185,10 +210,10 @@
         </main>
     </div>
     <!-- scripts -->
-    <script src="../assets/js/aside.js"></script>
-    <script src="../assets/js/forms.js"></script>
-    <script src="../assets/js/inputClass.js"></script>
-    <script src="../assets/js/maps.js"></script>
+    <script src="./assets/js/aside.js"></script>
+    <script src="./assets/js/forms.js"></script>
+    <script src="./assets/js/inputClass.js"></script>
+    <script src="./assets/js/maps.js"></script>
     <script src=""></script>
 </body>
 

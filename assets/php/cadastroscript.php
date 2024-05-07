@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <?php include '../../head.php'?>
     <title>Cadastro</title>
@@ -10,31 +10,25 @@
             <?php 
                 include "../../conexao.php";
 
-                $nome = $_POST['nome'];
-                $email = $_POST['email'];
-                $senha = $_POST['senha'];
-                $telefone = $_POST['telefone'];
-                $aps = $_POST['aps'];
-                $matricula = $_POST['matricula'];
-                $foto = $_FILES['foto'];
-                $nome_foto = mover_foto($foto);
+                $nome_cadastro = $_POST['nome_cadastro'];
+                $email_cadastro = $_POST['email_cadastro'];
+                $senha_cadastro = $_POST['senha_cadastro'];
+                $telefone_cadastro = $_POST['telefone_cadastro'];
+                $aps_cadastro = $_POST['aps_cadastro'];
+                $matricula_cadastro = $_POST['matricula_cadastro'];
 
-                $sql = "INSERT INTO `chamados` (`nome`, `email`, `senha`, `telefone`, `aps`, `matricula`, `foto`) VALUES ('$nome', '$email', '$senha', '$telefone', '$aps', '$matricula' '$foto')";
+                $sql = "INSERT INTO `usuarios` (`nome`, `email`, `senha`, `telefone`, `aps`, `matricula`) VALUES ('$nome_cadastro', '$email_cadastro', '$senha_cadastro', '$telefone_cadastro', '$aps_cadastro', '$matricula_cadastro')";
 
                 if (mysqli_query($conn, $sql)) {
-
-                    echo "<img src='img/chamados/$nome_foto' title='$nome_foto' class='mostrar-foto'>";
-
-
-                    mensagem("$nome foi cadastrado com sucesso!", 'success');
+                    mensagem("$nome_cadastro foi cadastrado com sucesso!", 'success');
 
                   //  print_r($_POST);
                 } else {
-                    mensagem("$nome  NÃO foi cadastrado!", 'danger');
+                    mensagem("$nome_cadastro  NÃO foi cadastrado!", 'danger');
                 }
 
             ?>
-            <a href="../../pages/index.php" class="btn btn-primary">Voltar</a>
+            <a href="../../index.php" class="btn btn-primary">Voltar</a>
         </div>
     </div>
 </body>

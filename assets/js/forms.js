@@ -21,7 +21,7 @@ function pegarDados(id, nome) {
 // Função para carregar o formulário dentro do modal
 function carregarFormulario() {
   $.ajax({
-    url: "chamado.php", // Arquivo PHP que contém o formulário
+    url: "./pages/chamado.php", // Arquivo PHP que contém o formulário
     type: "GET",
     success: function (response) {
       $("#modalFormulario .modal-body").html(response); // Carrega o conteúdo do formulário dentro do modal
