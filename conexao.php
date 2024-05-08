@@ -5,12 +5,10 @@
     $pass = "";
     $bd = "empresa";
 
-    // Tentativa de conexão com o banco de dados
+    // Se a conexão for bem-sucedida, exibe uma mensagem
     if ($conn = mysqli_connect($server, $user, $pass, $bd)) {
-        // Se a conexão for bem-sucedida, exibe uma mensagem
        // echo "Conectado! <br>";
     } else {
-        // Se a conexão falhar, exibe uma mensagem de erro
        //echo "Erro!";
     }
 
@@ -20,6 +18,7 @@
                 $texto  
              </div>";
     }
+    
     // Função para mover arquivos de fotos para um diretório específico
     function mover_foto($vetor_foto) {
 

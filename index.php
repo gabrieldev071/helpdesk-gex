@@ -59,7 +59,7 @@
                     <a href="http://" target="_blank" rel="noopener noreferrer"></a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="chamado.php" class="sidebar-link"  target="_blank" rel="noopener noreferrer">
+                    <a href="#" class="sidebar-link"  target="_blank" rel="noopener noreferrer">
                         <i class="lni lni-agenda"></i>
                         <span>
                             Chamados</span>
@@ -116,7 +116,7 @@
             <!-- LOGIN -->
             <div class="container-login border-link baseContainer">
                 <div class="wrap-login">
-                    <form class="login-form" method="POST" action="index.php">
+                    <form class="login-form" method="POST" action="logar.php">
                         <span class="login-form-title">SEJA BEM-VINDO!</span>
                         <span class="login-form-img">
                             <img src="" alt="" srcset="">
