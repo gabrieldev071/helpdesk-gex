@@ -2,8 +2,12 @@
 <html lang="pt-BR">
 <head>
     <?php include './assets/php/rotas.php';
-    include './assets/php/login.php';
+    require 'conexaoPDO.php'; 
+
+    ini_set('display_errors', 1);
+
     ?>
+
         <!-- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -21,7 +25,7 @@
 
      <!-- AJAX -->
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./assets/styles/global.css">
     <link rel="stylesheet" href="./assets/styles/main.css">
@@ -141,7 +145,7 @@
                             <a href="./pages/cadastro.php" class="txt2">Cadastre-se</a>
                         </div>
                     </form>
-                    <p>Respostas do site</p>
+                 
                 </div>
                 <!-- Sobre a equipe -->
                 <div id="carouselExampleCaptions" class="carousel slide wrap-carousel">
