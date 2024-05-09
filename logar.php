@@ -3,7 +3,7 @@
     if (isset($_POST["email_login"]) 
         && !empty($_POST["email_login"]) 
         && !empty($_POST["password_login"]) // Verifica se a senha foi fornecida
-        && !empty($_POST["password_login"] // Condicional redundante
+        && !empty($_POST["password_login"] 
     )){
 
         // Inclui o arquivo de conexão com o banco de dados

@@ -18,9 +18,14 @@ html {
   --tertiaryColor: #E39725;
   --tertiaryLight: #F5C514;
 	--textColor: #eee;
-  ---textColorForms: #134985;
- --backgroundColor: rgb(32, 34, 37);
- --backgroundLight: rgb(47, 49, 54);
+  --textColorForms: #134985;
+  --backgroundColor: #202225; 
+  --backgroundLight: #2f3136;
+  --backgreoundLeve: #646e76;
+
+ /* --backgroundColor: rgb(32, 34, 37); 
+   --backgroundLight: rgb(47, 49, 54);
+ */
 
 }
 

@@ -31,7 +31,7 @@
 }
 
 .wrap-login {
-  width: 600px;
+  width: 500px;
   height: 570px;
   color: var(--textColor);
   background-color: var(--backgroundColor);
@@ -204,10 +204,7 @@
   width: 100%;
   height: 50px;
   background-color: var(--backgroundLight);
-  /*     background: -webkit-linear-gradient(to left, #E39725, #134985);
-    background: -o-linear-gradient(to left, #E39725, #134985);
-    background: -moz-linear-gradient(to left, #E39725, #134985);
-    background: linear-gradient(to left, #E39725, #134985); */
+
 }
 
 .login-form-btn:hover {
