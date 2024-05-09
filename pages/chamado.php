@@ -57,7 +57,7 @@
             </div>
 
             <div class="wrap-input">
-                <textarea class="input" id="descricao_chamado" name="descricao" rows="5" required value=""></textarea>
+                <textarea class="input" id="descricao_chamado" name="descricao" rows="3" required value="" ></textarea>
                 <span class="focus-input" data-placeholder="Descrição do problema..."></span>
             </div>
 

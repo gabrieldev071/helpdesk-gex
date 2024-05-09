@@ -1,11 +1,9 @@
 // Função para fazer logout do usuário
-function logout() {
-  // Exibe um alerta indicando que o usuário saiu da conta
-  alert("Você saiu da sua conta.");
+/* function logout() {
   // Redireciona o usuário para a página de logout (logout.php)
-  window.location.href = "logout.php";
+  window.location.href = "../index.php";
 }
-
+ */
 // Evento que é acionado quando o DOM é completamente carregado
 
 document.addEventListener("DOMContentLoaded", function () {

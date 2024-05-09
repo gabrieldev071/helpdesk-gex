@@ -1,3 +1,10 @@
+<?php 
+    require '../conexaoPDO.php';
+    if (isset($_SESSION['iduser']) && !empty($_SESSION['iduser'])):
+ ?>       
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -85,7 +92,7 @@
                             <a class="nav-link" href="#">Meus Chamados</a>
                         </li>
                     </ul>
-                    <button class="btn btn-outline-danger" onclick="logout()">Logout</button>
+                    <a  href="../logout.php" class="btn btn-outline-danger" onclick="logout()">Logout</a>
                 </div>
             </div>
         </nav>
@@ -226,3 +233,6 @@
 </body>
 
 </html>
+
+
+<?php else: header("Location: ../index.php"); endif; ?>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     include './conexao.php';
     
 // Inicia a sessão
@@ -43,4 +43,4 @@ if (isset($_POST['email_login']) && strlen($_POST['email_login']) > 0) {
         echo "Erro: Não foi possível estabelecer a conexão com o banco de dados.";
     }
 }
-?>
+?> -->
