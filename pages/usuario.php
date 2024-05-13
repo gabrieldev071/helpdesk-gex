@@ -1,5 +1,5 @@
 <?php
-require '../conexaoPDO.php';
+    require '../assets/php/verifica.php';
 if (isset($_SESSION['iduser']) && !empty($_SESSION['iduser'])) :
 ?>
     <!DOCTYPE html>
@@ -99,7 +99,7 @@ if (isset($_SESSION['iduser']) && !empty($_SESSION['iduser'])) :
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Meus Chamados</a>
+                                <label class="nav-link" value=""><?php echo $nomeUser;?></label>
                             </li>
                         </ul>
                         <a href="../logout.php" class="btn btn-outline-danger" onclick="logout()">Logout</a>

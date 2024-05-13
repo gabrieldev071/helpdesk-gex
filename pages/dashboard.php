@@ -93,48 +93,7 @@
                     </div>
                 </a>
             </nav>
-            <!-- GRÁFICOS -->
-            <section class="mt-4 baseContainer">
-                <h2>Resumo dos Tickets</h2>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card bg-primary text-white text-center d-flex align-items-center">
-                            <div class="card-body">
-                                <i class="fas fa-clipboard-list fa-2x"></i>
-                                <h6 class="card-title">Tickets totais:</h6>
-                                <p class="card-text">7</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-success text-white text-center d-flex align-items-center">
-                            <div class="card-body">
-                                <i class="fas fa-lock-open fa-2x"></i>
-                                <h6 class="card-title">Tickets abertos:</h6>
-                                <p class="card-text">5</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-warning text-white text-center d-flex align-items-center">
-                            <div class="card-body">
-                                <i class="fas fa-play-circle fa-2x"></i>
-                                <h6 class="card-title">Em atendimento:</h6>
-                                <p class="card-text">1</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card bg-danger text-white text-center d-flex align-items-center">
-                            <div class="card-body">
-                                <i class="fas fa-check-circle fa-2x"></i>
-                                <h6 class="card-title">Tickets fechados:</h6>
-                                <p class="card-text">1</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+     <!-- GRÁFICOS -->
             <section class="container-table flex-grow-1 baseContainer">
                 <h3 class="text-start text-light fw-bold fs-1 my-5">CHAMADOS
                 </h3>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/05/2024 às 04:02
+-- Tempo de geração: 13/05/2024 às 12:51
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.1.25
 
@@ -77,8 +77,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`cod_pessoa`, `nome`, `senha`, `telefone`, `email`, `aps`, `matricula`, `foto`, `date_cadastro`) VALUES
-(41, 'Jose Edmar Bezerra Da Silva', '43412312', '8396494326', 'jose.edmar@inss.gov.br', '13021030', '123231212', '', '2024-05-07 16:28:21'),
-(44, 'Gabriel Albuquerque Souza', 'asko2198i2', '1082830192210', 'inss.gov@inss.gova', 'GEX', '3341651', '', '2024-05-07 17:57:23');
+(41, 'Jose Edmar Bezerra Da Silva', '123', '8396494326', 'jose.edmar@inss.gov.br', '13021030', '123231212', '', '2024-05-07 16:28:21'),
+(44, 'Gabriel Albuquerque Souza', '12', '1082830192210', 'inss.gov@inss.gova', 'GEX', '3341651', '', '2024-05-07 17:57:23');
 
 --
 -- Índices para tabelas despejadas

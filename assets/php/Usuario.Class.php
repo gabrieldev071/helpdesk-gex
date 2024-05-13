@@ -37,6 +37,43 @@ class Usuario {
             return false;
         }       
     }
+
+    public function logged($id) {
+        global $pdo;
+    
+        try {
+            $array = array(); // Array para armazenar os dados do usuário
+    
+            // Define a consulta SQL para selecionar o nome do usuário com base no ID fornecido
+            $sql = "SELECT nome FROM usuarios WHERE cod_pessoa = :id";
+    
+            // Prepara a consulta SQL para execução
+            $sql = $pdo->prepare($sql);
+    
+            // Substitui o marcador de posição :id pelo valor do parâmetro $id
+            $sql->bindValue("id", $id);
+    
+            // Executa a consulta SQL
+            $sql->execute();
+    
+            // Verifica se a consulta retornou algum resultado
+            if ($sql->rowCount() > 0) {
+                // Se houver resultados, armazena o resultado em $array
+                $array = $sql->fetch();
+            } else {
+                // Se não houver resultados, lança uma exceção informando que o usuário não foi encontrado
+                throw new Exception("Usuário não encontrado");
+            }
+    
+            // Retorna o array contendo os dados do usuário
+            return $array;
+        } catch (PDOException $e) {
+            // Se ocorrer um erro durante a execução da consulta, lança uma exceção PDOException
+            // Nesse caso, a exceção será capturada pelo código que chama essa função e poderá ser tratada adequadamente
+            throw new Exception("Erro durante a consulta: " . $e->getMessage());
+        }
+    }
+    
+
 }
 ?>
-<!--  -->
