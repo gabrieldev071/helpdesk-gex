@@ -1,3 +1,8 @@
+<?php
+    require '../assets/php/verifica.php';
+if (isset($_SESSION['iduser']) && !empty($_SESSION['iduser'])) :
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -56,11 +61,12 @@
         .aside {
             background-color: var(--backgroundColor);
             padding: 20px;
+            border-radius: 8px;
         }
 
         .aside h3 {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 16px;
             margin-bottom: 20px;
             color: var(--textColor);
         }
@@ -112,14 +118,31 @@
             color: var(--backgroundColor);
         }
 
+        main {
+            background-color: var(--backgroundColor);
+
+            border-radius: 8px;
+            /* Borda arredondada */
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
         .col-md-3:nth-child(odd) .card {
             background-color: var(--backgreoundLeve);
             /* Cor 1 */
         }
 
         .col-md-3:nth-child(even) .card {
-            background-color: #414449; /* Cor 2 */
-           
+            background-color: #414449;
+            /* Cor 2 */
+
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 5px 0;
+            /* Adiciona padding de 10 pixels */
         }
 
         /* Estilos para a tabela de tickets */
@@ -141,10 +164,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">Meus Chamados</a>
+                            <label class="nav-link" value=""><?php echo $nomeUser; ?></label>
                         </li>
                     </ul>
-                    <a href="../logout.php" class="btn btn-outline-danger" onclick="logout()" style="color: white;">Logout</a>
+                    <a href="../logout.php" class="btn btn-outline-danger" onclick="logout()">Logout</a>
                 </div>
             </div>
         </nav>
@@ -191,7 +214,7 @@
                         <div class="col-md-3">
                             <div class="card bg-warning text-white text-center d-flex align-items-center">
                                 <div class="card-body">
-                                    <i class="fas fa-play-circle fa-2x"></i>
+                                    <i class="fas fa-headset fa-2x"></i>
                                     <h6 class="card-title">Em atendimento:</h6>
                                     <p class="card-text">1</p>
                                 </div>
@@ -207,6 +230,7 @@
                             </div>
                         </div>
                     </div>
+
                 </section>
 
                 <!-- Segunda sessão -->
@@ -225,9 +249,9 @@
                 <section class="mt-4">
                     <!-- Tabela de tickets -->
                     <table class="table table-dark table-striped border-secondary">
-                        <thead>
+                        <thead style="background-color: #646e76; color: #fff;">
                             <tr>
-                                <th scope="col">Código do Ticket</th>
+                                <th scope="col">Código</th>
                                 <th scope="col">Nome do Chamado</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Prioridade</th>
@@ -236,19 +260,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr style="background-color: #e9ecef;">
                                 <th scope="row">12345</th>
                                 <td>Suporte Técnico</td>
                                 <td>João Silva</td>
-                                <td>Alta</td>
+                                <td style="vertical-align: middle;"><span class="badge bg-danger">Alta</span></td>
                                 <td>01/01/2023</td>
                                 <td>Em Atendimento</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #e9ecef;">
                                 <th scope="row">67890</th>
                                 <td>Dúvida sobre PRISMA</td>
                                 <td>Maria Oliveira</td>
-                                <td>Média</td>
+                                <td style="vertical-align: middle;"><span class="badge bg-warning text-dark">Média</span></td>
+                                <td>05/02/2023</td>
+                                <td>Em Atendimento</td>
+                            </tr>
+                            <tr style="background-color: #e9ecef;">
+                                <th scope="row">27520</th>
+                                <td>Dúvida sobre PRISMA</td>
+                                <td>Maria Oliveira</td>
+                                <td style="vertical-align: middle;"><span class="badge bg-primary text-light">Baixa</span></td>
                                 <td>05/02/2023</td>
                                 <td>Em Atendimento</td>
                             </tr>
@@ -256,6 +288,7 @@
                         </tbody>
                     </table>
                 </section>
+
             </main>
 
         </div>
@@ -282,7 +315,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-    <script src="../assets/js/painelUsuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+        <!-- scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <script src="../assets/js/aside.js"></script>
+        <script src="../assets/js/forms.js"></script>
+        <script src="../assets/js/inputClass.js"></script>
+        <script src="../assets/js/maps.js"></script>
+        <script src="../assets/js/painelUsuario.js"></script>
 </body>
 
 </html>
+
+<?php else : header("Location: ../index.php");
+endif; ?>
